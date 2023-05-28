@@ -2,9 +2,11 @@
 import { BrowserRouter as Router ,Routes, Route } from "react-router-dom";
 
 import "./App.css";
+ 
 
 // components
 import Header from "./Components/Header";
+import Footer from "./Components/Footer";
 
 // pages
 import Blog from "./pages/Blog";
@@ -23,6 +25,7 @@ function App() {
           <Route path="/cakes" element={<Cakes />} />
           <Route path="/blog" element={<Blog />} />
         </Routes>
+     <Footer/>
       </div>
     </Router>
   );
