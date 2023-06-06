@@ -127,6 +127,11 @@
 
 // export default HomePage;
 
+ 
+
+
+
+ 
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -145,7 +150,7 @@ const Card: React.FC<CardProps> = ({ card }) => {
 
   return (
     <div className="border border-solid w-64 h-96 mb-6 ml-5 bg-pink-200 m-10">
-      <img src={require(imageSrc)} alt="img" className="w-64 h-42" />
+      <img src={imageSrc} alt="img" className="w-64 h-42" />
 
       <div className="flex items-center text-center mt-5 mr-5">
         <div className="ml-auto">
@@ -174,46 +179,46 @@ const CookiesItem: React.FC = () => {
   const [bestSellers, setBestSellers] = useState([
     {
       id: 1,
-      imageSrc:  "../images/cake1.jpg" ,
+      imageSrc: "/images/cake1.jpg",
       name: "Cookie 1",
       price: "$10",
       rating: 4.5,
     },
     {
-      id: 2,
-      imageSrc:  "../images/cake2.jpg" ,
-      name: "Cookie 2",
-      price: "$15",
-      rating: 4.2,
-    },
-    {
-      id: 3,
-      imageSrc:  "../images/cake3.jpg" ,
-      name: "Cookie 3",
-      price: "$12",
-      rating: 4.2,
-    },
-    {
-      id: 4,
-      imageSrc:  "../images/cookies1.jpg" ,
-      name: "Cookie 4",
-      price: "$18",
-      rating: 4.4,
-    },
-    {
-      id: 5,
-      imageSrc:  "../images/cookies2.jpg" ,
-      name: "Cookie 5",
-      price: "$15",
-      rating: 4.5,
-    },
-    {
-      id: 6,
-      imageSrc:  "../images/cookies3.jpg" ,
-      name: "Cookie 6",
-      price: "$10",
-      rating: 4.3,
-    },
+            id: 2,
+            imageSrc: "/images/cake2.jpg",
+            name: "Cookie 2",
+            price: "$15",
+            rating: 4.2,
+          },
+          {
+            id: 3,
+            imageSrc: "/images/cake3.jpg",
+            name: "Cookie 3",
+            price: "$12",
+            rating: 4.2,
+          },
+          {
+            id: 4,
+            imageSrc: "/images/cookies1.jpg",
+            name: "Cookie 4",
+            price: "$18",
+            rating: 4.4,
+          },
+          {
+            id: 5,
+            imageSrc: "/images/cookies2.jpg",
+            name: "Cookie 5",
+            price: "$15",
+            rating: 4.5,
+          },
+          {
+            id: 6,
+            imageSrc: "/images/cookies3.jpg",
+            name: "Cookie 6",
+            price: "$10",
+            rating: 4.3,
+          },
   ]);
 
   return (

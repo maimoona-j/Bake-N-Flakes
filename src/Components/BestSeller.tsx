@@ -164,11 +164,11 @@ export default function BestSeller() {
           <CookieItem />
         </div>
 
-         {/* <div className="flex justify-center items-center">
+         <div className="flex justify-center items-center">
           <CookieItem />
           <CookieItem />
           <CookieItem />
-        </div> */}
+        </div>
       </div>  
     </>
   );

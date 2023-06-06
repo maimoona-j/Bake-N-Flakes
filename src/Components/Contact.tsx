@@ -17,6 +17,7 @@ export default function contact() {
         />
         <label htmlFor="name">Message</label>
         <textarea
+        
           className="border-2  mt-5 p-5 "
           placeholder="Enter your feedback.."
         >
