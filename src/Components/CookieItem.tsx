@@ -134,6 +134,12 @@
  
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import cake1 from "../images/cake1.jpg";
+import cake2 from "../images/cake2.jpg";
+import cake3 from "../images/cake3.jpg";
+import cookies1 from "../images/cookies1.jpg";
+import cookies2 from "../images/cookies2.jpg";
+import cookies3 from "../images/cookies3.jpg";
 
 interface CardProps {
   card: {
@@ -179,51 +185,53 @@ const CookiesItem: React.FC = () => {
   const [bestSellers, setBestSellers] = useState([
     {
       id: 1,
-      imageSrc: "/images/cake1.jpg",
+      imageSrc: cake1,
       name: "Cookie 1",
       price: "$10",
       rating: 4.5,
     },
     {
-            id: 2,
-            imageSrc: "/images/cake2.jpg",
-            name: "Cookie 2",
-            price: "$15",
-            rating: 4.2,
-          },
-          {
-            id: 3,
-            imageSrc: "/images/cake3.jpg",
-            name: "Cookie 3",
-            price: "$12",
-            rating: 4.2,
-          },
-          {
-            id: 4,
-            imageSrc: "/images/cookies1.jpg",
-            name: "Cookie 4",
-            price: "$18",
-            rating: 4.4,
-          },
-          {
-            id: 5,
-            imageSrc: "/images/cookies2.jpg",
-            name: "Cookie 5",
-            price: "$15",
-            rating: 4.5,
-          },
-          {
-            id: 6,
-            imageSrc: "/images/cookies3.jpg",
-            name: "Cookie 6",
-            price: "$10",
-            rating: 4.3,
-          },
+      id: 2,
+      imageSrc: cake2,
+      name: "Cookie 2",
+      price: "$15",
+      rating: 4.2,
+    },
+    {
+      id: 3,
+      imageSrc: cake3,
+      name: "Cookie 3",
+      price: "$12",
+      rating: 4.2,
+    },
+    {
+      id: 4,
+      imageSrc: cookies1,
+      name: "Cookie 4",
+      price: "$18",
+      rating: 4.4,
+    },
+    {
+      id: 5,
+      imageSrc: cookies2,
+      name: "Cookie 5",
+      price: "$15",
+      rating: 4.5,
+    },
+    {
+      id: 6,
+      imageSrc: cookies3,
+      name: "Cookie 6",
+      price: "$10",
+      rating: 4.3,
+    },
   ]);
+
+  const limitedBestSellers = bestSellers.slice(0, 6);
 
   return (
     <div>
-      {bestSellers.map((card) => (
+      {limitedBestSellers.map((card) => (
         <Card key={card.id} card={card} />
       ))}
     </div>
@@ -231,3 +239,81 @@ const CookiesItem: React.FC = () => {
 };
 
 export default CookiesItem;
+
+
+
+// import React, { useState } from "react";
+// import BestSeller from "./BestSeller";
+// import cake1 from "../images/cake1.jpg";
+// import cake2 from "../images/cake2.jpg";
+// import cake3 from "../images/cake3.jpg";
+// import cookies1 from "../images/cookies1.jpg";
+// import cookies2 from "../images/cookies2.jpg";
+// import cookies3 from "../images/cookies3.jpg";
+
+// interface CardData {
+//   id: number;
+//   imageSrc: string;
+//   name: string;
+//   price: string;
+//   rating: number;
+// }
+
+// const CookieItem: React.FC = () => {
+//   const [bestSellers, setBestSellers] = useState<CardData[]>([
+//     {
+//       id: 1,
+//       imageSrc: cake1,
+//       name: "Cookie 1",
+//       price: "$10",
+//       rating: 4.5,
+//     },
+//     {
+//       id: 2,
+//       imageSrc: cake2,
+//       name: "Cookie 2",
+//       price: "$15",
+//       rating: 4.2,
+//     },
+//     {
+//       id: 3,
+//       imageSrc: cake3,
+//       name: "Cookie 3",
+//       price: "$12",
+//       rating: 4.2,
+//     },
+//     {
+//       id: 4,
+//       imageSrc: cookies1,
+//       name: "Cookie 4",
+//       price: "$18",
+//       rating: 4.4,
+//     },
+//     {
+//       id: 5,
+//       imageSrc: cookies2,
+//       name: "Cookie 5",
+//       price: "$15",
+//       rating: 4.5,
+//     },
+//     {
+//       id: 6,
+//       imageSrc: cookies3,
+//       name: "Cookie 6",
+//       price: "$10",
+//       rating: 4.3,
+//     },
+//   ]);
+
+//   const limitedBestSellers = bestSellers.slice(0, 6);
+
+//   return (
+//     <div>
+//       {limitedBestSellers.map((card) => (
+//         <BestSeller key={card.id} {...card} />
+//       ))}
+//     </div>
+//   );
+// };
+
+// export default CookieItem;
