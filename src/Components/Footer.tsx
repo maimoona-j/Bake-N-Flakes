@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer>
       <div className="bg-black text-white flex flex-col lg:flex-row">
-        <div className="flex items-center justify-center flex-col w-full lg:w-96">
+        <div className="flex items-center justify-center flex-col ml-36 w-full lg:w-96">
           <h3 className="pl-2 text-left">About us</h3>
           <p className="pl-2 text-center">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit.

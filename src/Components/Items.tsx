@@ -47,7 +47,7 @@ const Card: React.FC<CardProps> = ({ card }) => {
   );
 };
 
-const CookiesItem: React.FC = () => {
+const Items: React.FC = () => {
   const [bestSellers, setBestSellers] = useState([
     {
       id: 1,
@@ -91,30 +91,61 @@ const CookiesItem: React.FC = () => {
       price: "$10",
       rating: 4.3,
     },
+    {
+      id: 7,
+      imageSrc: cake1,
+      name: "Cake 1",
+      price: "$10",
+      rating: 4.5,
+    },
+    {
+      id: 8,
+      imageSrc: cake2,
+      name: "Cake 2",
+      price: "$15",
+      rating: 4.2,
+    },
+    {
+      id: 9,
+      imageSrc: cake3,
+      name: "Cake 3",
+      price: "$12",
+      rating: 4.2,
+    },
+    {
+      id: 10,
+      imageSrc: cookies1,
+      name: "Cookie 1",
+      price: "$18",
+      rating: 4.4,
+    },
+    {
+      id: 11,
+      imageSrc: cookies2,
+      name: "Cookie 2",
+      price: "$15",
+      rating: 4.5,
+    },
+    {
+      id: 12,
+      imageSrc: cookies3,
+      name: "Cookie 3",
+      price: "$10",
+      rating: 4.3,
+    },
   ]);
 
-  const limitedBestSellers = bestSellers.slice(0, 6);
-  const cakes = limitedBestSellers.slice(0, 3); // First 3 items are cakes
-  const cookies = limitedBestSellers.slice(3, 6);
+  const limitedBestSellers = bestSellers.slice(0, 12);
 
   return (
-    <div className="flex flex-col">
-      <div className="flex flex-row">
-        {cakes.map((cake) => (
-          <div key={cake.id}>
-            <Card card={cake} />
-          </div>
-        ))}
-      </div>
-      <div className="flex flex-row">
-        {cookies.map((cookie) => (
-          <div key={cookie.id}>
-            <Card card={cookie} />
-          </div>
-        ))}
-      </div>
+    <div className="grid grid-cols-1 md:grid-cols-3 ">
+      {limitedBestSellers.map((item) => (
+        <div key={item.id}>
+          <Card card={item} />
+        </div>
+      ))}
     </div>
   );
 };
 
-export default CookiesItem;
+export default Items;

@@ -7,10 +7,9 @@ export default function BestSeller() {
   return (
     <div className="p-4">
       <h1 className="text-2xl font-bold mb-4">Best Seller</h1>
-      <div className="ml-[250px]">
-      <CookieItem />
+      <div className="ml-[280px]">
+        <CookieItem />
       </div>
-      {/* <CookieItem /> */}
     </div>
   );
 }
