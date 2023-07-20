@@ -12,6 +12,7 @@ import Blog from "./pages/Blog";
 import Cakes from "./pages/Cakes";
 import Cookies from "./pages/Cookies";
 import Home from "./pages/Home";
+import Cart from "./Components/Cart";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/cakes" element={<Cakes />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
      <Footer/>
       </div>

@@ -1,4 +1,6 @@
+ 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import cake1 from "../images/cake1.jpg";
 import cake2 from "../images/cake2.jpg";
@@ -19,13 +21,17 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ card }) => {
   const { imageSrc, name, price, rating } = card;
+  const navigate = useNavigate();
+  const handleCart =()=>{
+  navigate("/cart")
+  }
 
   return (
-    <div className="border border-solid w-64 h-[400px] mb-6 ml-5 rounded-xl bg-pink-200 m-10">
+    <div className="border border-solid w-64 h-[400px] mb-2 rounded-xl bg-pink-200">
       <img src={imageSrc} alt="img" className="w-64 h-42" />
 
-      <div className="flex items-center text-center mt-5 mr-5">
-        <div className="ml-auto">
+      <div className="flex items-center justify-center mt-2">
+        <div className="flex">
           <h6>reviews</h6>
           {[...Array(Math.floor(rating))].map((_, index) => (
             <FontAwesomeIcon
@@ -36,12 +42,19 @@ const Card: React.FC<CardProps> = ({ card }) => {
           ))}
         </div>
       </div>
-      <div className="m-5">
-        <h3 className="text-lg mb-2">{name}</h3>
-        <p className="mb-2">{price}</p>
-        <button className="bg-blue-300 p-3 mb-8 w-32 rounded-full hover:bg-gray-400">
-          buy now
+      <div className="m-2">
+        <h3 className="text-lg mb-1">{name}</h3>
+        <p className="mb-1">{price}</p>
+        <div className="flex">
+        <div className="mt-4">
+        <label htmlFor="input">Items: </label>
+        <input type="number" className='border border-gray-300 w-16 h-6 ' />
+        </div>
+       
+       <button className="bg-blue-300 p-2 w-36 mt-7 rounded hover:bg-gray-400" onClick={handleCart}>
+        Add to Cart
         </button>
+       </div>
       </div>
     </div>
   );
@@ -73,63 +86,63 @@ const Items: React.FC = () => {
     {
       id: 4,
       imageSrc: cookies1,
-      name: "Cookie 1",
+      name: "Cake 4",
       price: "$18",
       rating: 4.4,
     },
     {
       id: 5,
       imageSrc: cookies2,
-      name: "Cookie 2",
+      name: "Cake 5",
       price: "$15",
       rating: 4.5,
     },
     {
       id: 6,
       imageSrc: cookies3,
-      name: "Cookie 3",
+      name: "Cake 6",
       price: "$10",
       rating: 4.3,
     },
     {
       id: 7,
       imageSrc: cake1,
-      name: "Cake 1",
+      name: "Cake 7",
       price: "$10",
       rating: 4.5,
     },
     {
       id: 8,
       imageSrc: cake2,
-      name: "Cake 2",
+      name: "Cake 8",
       price: "$15",
       rating: 4.2,
     },
     {
       id: 9,
       imageSrc: cake3,
-      name: "Cake 3",
+      name: "Cake 9",
       price: "$12",
       rating: 4.2,
     },
     {
       id: 10,
       imageSrc: cookies1,
-      name: "Cookie 1",
+      name: "Cake 10",
       price: "$18",
       rating: 4.4,
     },
     {
       id: 11,
       imageSrc: cookies2,
-      name: "Cookie 2",
+      name: "Cake 11",
       price: "$15",
       rating: 4.5,
     },
     {
       id: 12,
       imageSrc: cookies3,
-      name: "Cookie 3",
+      name: "Cake 12",
       price: "$10",
       rating: 4.3,
     },
@@ -138,9 +151,9 @@ const Items: React.FC = () => {
   const limitedBestSellers = bestSellers.slice(0, 12);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 ">
+    <div className="grid grid-cols-1 md:grid-cols-3 w-[950px]   pl-4 mr-56 mt-12 ">
       {limitedBestSellers.map((item) => (
-        <div key={item.id}>
+        <div key={item.id} className="p-2">
           <Card card={item} />
         </div>
       ))}
