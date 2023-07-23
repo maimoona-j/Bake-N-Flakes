@@ -3,6 +3,7 @@
  import CakeItems from "../Components/CakeItem";
  import ProductDisplay from "../Components/ProductDisplay";
  import Sort from "../Components/Sort";
+import HomeMade from "../Components/HomeMade";
 
 export default function Cakes() {
   return (
@@ -18,6 +19,7 @@ export default function Cakes() {
           <CakeItems />
         </div>
       </div>
+      <HomeMade/>
     </div>
     </div>
   )
