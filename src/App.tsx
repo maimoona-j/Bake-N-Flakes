@@ -6,13 +6,16 @@ import "./App.css";
 // components
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
+import Cart from "./Components/Cart";
+import SignIn from "./Components/SignIn";
+import SignUp from "./Components/SignUp";
 
 // pages
 import Blog from "./pages/Blog";
 import Cakes from "./pages/Cakes";
 import Cookies from "./pages/Cookies";
 import Home from "./pages/Home";
-import Cart from "./Components/Cart";
+
 
 function App() {
   return (
@@ -25,6 +28,8 @@ function App() {
           <Route path="/cakes" element={<Cakes />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
         </Routes>
      <Footer/>
       </div>
