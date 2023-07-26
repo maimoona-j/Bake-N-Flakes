@@ -15,7 +15,7 @@ const Profile = ({ onClose }: { onClose: () => void }) => {
 
   return (
     <div>
-      <div className="w-36 h-36 border border-gray-400 ">
+      <div className="w-36 h-36 border border-gray-400 rounded-lg ">
         <button onClick={onClose} className="ml-24">
           {" "}
           <FontAwesomeIcon icon={faTimes} />
