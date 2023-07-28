@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import cake1 from "../images/cake1.jpg";
 import cake2 from "../images/cake2.jpg";
@@ -6,6 +7,7 @@ import cake3 from "../images/cake3.jpg";
 import cookies1 from "../images/cookies1.jpg";
 import cookies2 from "../images/cookies2.jpg";
 import cookies3 from "../images/cookies3.jpg";
+
 
 interface CardProps {
   card: {
@@ -18,6 +20,10 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ card }) => {
+  const navigate = useNavigate();
+  const handleCart = ()=>{
+navigate("/cart")
+  }
   const { imageSrc, name, price, rating } = card;
 
   return (
@@ -39,7 +45,7 @@ const Card: React.FC<CardProps> = ({ card }) => {
       <div className="m-5">
         <h3 className="text-lg mb-2">{name}</h3>
         <p className="mb-2">{price}</p>
-        <button className="bg-blue-300 p-3 mb-8 w-32 rounded-full hover:bg-gray-400">
+        <button className="bg-blue-300 p-3 mb-8 w-32 rounded-full hover:bg-gray-400" onClick={handleCart}>
           buy now
         </button>
       </div>
