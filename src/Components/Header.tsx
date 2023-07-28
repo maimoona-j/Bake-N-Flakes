@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -16,10 +16,15 @@ import Profile from "../Components/Profile";
 library.add(fas);
 
 const Header = () => {
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false); // State to control profile visibility
+
+  const instagramUrl = "https://www.instagram.com/";
+  const facebookUrl = "https://www.facebook.com/";
+  const twitterUrl = "https://www.twitter.com/";
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
@@ -44,15 +49,25 @@ const Header = () => {
   return (
     <div className="sticky top-0 z-50">
       <div className="flex items-center justify-end bg-black">
-        <FontAwesomeIcon
-          icon={faInstagram}
-          className="text-white text-xl mx-2"
-        />
-        <FontAwesomeIcon
-          icon={faFacebook}
-          className="text-white text-xl mx-2"
-        />
-        <FontAwesomeIcon icon={faTwitter} className="text-white text-xl mx-2" />
+        <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon
+            icon={faInstagram}
+            className="text-white text-xl mx-2"
+          />
+        </a>
+        <a href={facebookUrl} target="_blank">
+          <FontAwesomeIcon
+            icon={faFacebook}
+            className="text-white text-xl mx-2"
+          />
+        </a>
+
+        <a href={twitterUrl} target="_blank">
+          <FontAwesomeIcon
+            icon={faTwitter}
+            className="text-white text-xl mx-2"
+          />
+        </a>
       </div>
 
       <div className="bg-pink-200 h-24 flex items-center justify-between cursor-pointer">
