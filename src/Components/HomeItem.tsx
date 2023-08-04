@@ -189,7 +189,7 @@ const CookiesItem: React.FC = () => {
     {
       id: 1,
       imageSrc: cake1,
-      name: "Cake 1",
+      name: "cake1",
       price: "$10",
       rating: 4.5,
     },
