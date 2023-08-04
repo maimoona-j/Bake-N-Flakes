@@ -18,7 +18,7 @@
 export default function Category() {
   return (
     <>
-    <div className="w-full">
+    <div className="w-full pl-3">
     <h2 className="text-xl font-bold">Categories</h2>
      <ul className="pt-5 text-lg text-left flex flex-col font-semibold underline  underline-offset-4 decoration-pink-500 ">
       <li className="footer_link">Cookies</li>

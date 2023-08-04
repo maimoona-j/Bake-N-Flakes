@@ -1,7 +1,7 @@
 export default function Cart() {
   return (
     <div>
-      <div className="border border-sky-300 border-2 rounded-lg w-full md:w-[1000px] mx-2 md:mx-auto mt-5 mb-5">
+      <div className="  lg:p-0 p-9  rounded-lg w-full md:w-[1000px] mx-2 md:mx-auto mt-5 mb-5">
         <h1 className="text-2xl mt-4">Product details</h1>
         <div className="mt-6   ">
           <img src="" alt="" />
@@ -16,13 +16,13 @@ export default function Cart() {
               <div className="w-full md:w-[450px] h-[92px] md:ml-[30px] mt-[30px]   ">
                 <input
                   type="text"
-                  className="w-full md:w-[450px] h-[50px] mt-2  border border-gray-300 rounded  "
+                  className="w-full md:w-[450px] h-[50px] mt-2 pl-5 border border-gray-300 rounded  "
                   placeholder="First Name"
                   style={{ paddingLeft: "10px" }}
                 />
               </div>
 
-              <div className="w-full md:w-[450px] h-[92px]   md:ml-[30px] mt-[10px]  ">
+              <div className="w-full md:w-[450px] h-[92px]   md:ml-[30px] mt-[30px]  ">
                 <input
                   type="text"
                   className="w-full md:w-[450px] h-[50px] mt-2 border border-gray-300 rounded"
