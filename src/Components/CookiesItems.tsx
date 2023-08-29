@@ -1,4 +1,6 @@
 import { useState } from "react";
+import {   useDispatch } from "react-redux";
+import { addItem, deleteItem } from "../actions/cartAction";
 import Spinner from "../Components/Spinner";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,9 +16,10 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ card }) => {
-  const { imageSrc, name, price, rating } = card;
+  const {id, imageSrc, name, price, rating } = card;
   const navigate = useNavigate();
   const [isAddingToCart, setIsAddingToCart] = useState(false);
+  const [quantity, setQuantity] = useState(1);
 
   const handleCart = () => {
     setIsAddingToCart(true);
@@ -25,6 +28,8 @@ const Card: React.FC<CardProps> = ({ card }) => {
     }, 1000); // Navigate after 1 second (you can adjust the time as needed)
   };
 
+  
+  const dispatch = useDispatch();
   return (
     <div className="rounded-xl bg-pink-200 cursor-pointer shadow-lg ">
       <img
@@ -50,18 +55,24 @@ const Card: React.FC<CardProps> = ({ card }) => {
         <p className="underline text-pink-500">{price}</p>
         <div className="flex   justify-between gap-2 items-center py-2">
           <div className="inline-flex items-center gap-1">
-            <label htmlFor="input" className="font-semibold">
+            <label htmlFor={`input-${id}`} className="font-semibold">
               Items:{" "}
             </label>
             <input
               type="number"
+              id={`input-${id}`}
+              value={quantity}
+              onChange={(e) => setQuantity(Number(e.target.value))}
               className="border border-pink-500 rounded-lg w-12 sm:w-16 xl:w-24 py-2 bg-white px-2"
             />
           </div>
 
           <button
-            className="bg-pink-500 font-semibold text-pink-200 hover:text-pink-500 hover:bg-pink-200 border border-pink-400 transition-all whitespace-nowrap duration-300 px-2 sm:px-5 lg:px-4 xl:px-6 py-2 rounded "
-            onClick={handleCart}
+            className="bg-pink-500   font-semibold text-pink-200 hover:text-pink-500 hover:bg-pink-200 border border-pink-400 transition-all whitespace-nowrap duration-300 px-2 sm:px-5 lg:px-4 xl:px-6 py-2 rounded "
+            // onClick={handleCart} 
+            onClick={() => {
+              dispatch(addItem(quantity)); 
+            }}
           >
             {isAddingToCart ? <Spinner /> : "Add to Cart"}
           </button>

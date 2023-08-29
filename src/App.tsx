@@ -2,6 +2,8 @@
 import { BrowserRouter as Router ,Routes, Route } from "react-router-dom";
 
 import "./App.css";
+import { Provider } from "react-redux";
+import store from "./store";
 
 // components
 import Header from "./Components/Header";
@@ -19,6 +21,7 @@ import Home from "./pages/Home";
 
 function App() {
   return (
+    <Provider store={store}>
     <Router>
       <div className="App">
         <Header />
@@ -34,6 +37,7 @@ function App() {
      <Footer/>
       </div>
     </Router>
+    </Provider>
   );
 }
 

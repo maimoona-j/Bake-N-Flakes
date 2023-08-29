@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
+import { useSelector  } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
@@ -41,6 +42,8 @@ const Header = () => {
     setIsProfileOpen(!isProfileOpen);
   };
 
+  const state = useSelector((state:any) => state);
+ 
   return (
     <div className="sticky top-0 z-50">
       <div className="flex items-center justify-end bg-black">
@@ -78,11 +81,15 @@ const Header = () => {
             Bake n' Flakes
           </h1>
           <FontAwesomeIcon icon="heart" className="text-2xl ml-2 sm:ml-12" />
+          <div>
           <FontAwesomeIcon
             icon="shopping-cart"
             className="text-2xl ml-2 sm:ml-12"
             onClick={() => handleNavigate("/cart")}
           />
+          {state.numOfItems}
+          </div>
+        
         </div>
         <FontAwesomeIcon
           icon={faBars}
