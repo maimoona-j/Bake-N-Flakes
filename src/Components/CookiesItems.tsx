@@ -68,7 +68,6 @@ const Card: React.FC<CardProps> = ({ card }) => {
           </div>
 
           <button
-            // className="bg-pink-500   font-semibold text-pink-200 hover:text-pink-500 hover:bg-pink-200 border border-pink-400 transition-all whitespace-nowrap duration-300 px-2 sm:px-5 lg:px-4 xl:px-6 py-2 rounded "
             className="bg-pink-500   font-semibold text-pink-200 hover:text-pink-500 hover:bg-pink-200 border border-pink-400 transition-all whitespace-nowrap duration-300 px-1 sm:px-1 lg:px-4 xl:px-6  lg:py-3 py-2 w-36 lg:w-36 rounded "
             onClick={() => {
               dispatch(addItem(quantity)); 

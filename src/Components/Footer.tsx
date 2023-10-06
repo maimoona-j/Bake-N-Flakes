@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="bg-black   text-white flex flex-col lg:flex-row items-center justify-center">
         {/* About us section */}
         <div className="flex items-center justify-center flex-col w-full lg:w-96 p-4 lg:pl-36">
-          <h3 className="text-left">About us</h3>
+          <h3 className="text-left text-sm sm:text-md">About</h3>
           <p className="text-center">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit.
             Consequatur ea vero maxime. Consequuntur ducimus saepe doloribus
@@ -19,9 +19,9 @@ export default function Footer() {
             cum vero repellendus fugit voluptatibus minus pariatur quos? Soluta,
             quisquam nam corrupti animi cumque minus
           </p>
-          <a href="#" className="text-center text-blue-500">
+          {/* <a href="#" className="text-center text-blue-500">
             read more
-          </a>
+          </a> */}
         </div>
 
         {/* Help section */}
@@ -37,7 +37,7 @@ export default function Footer() {
 
         {/* Contact us section */}
         <div className="flex items-center justify-center flex-col w-full lg:w-96 p-4 lg:pr-36">
-          <h3 className="text-right">Contact us</h3>
+          <h3 className="text-right">Contact</h3>
           <ul className="text-center">
             <li>Address: XYZ street</li>
             <li>
